@@ -1,0 +1,205 @@
+{
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT ",
+    "version": "eosio::abi/1.1",
+    "types": [],
+    "structs": [
+        {
+            "name": "cpupayers",
+            "base": "",
+            "fields": [
+                {
+                    "name": "cpu_payer",
+                    "type": "name"
+                },
+                {
+                    "name": "freecpu_permission",
+                    "type": "name"
+                },
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "require_recipients",
+                    "type": "name[]"
+                },
+                {
+                    "name": "r1",
+                    "type": "bool"
+                },
+                {
+                    "name": "r2",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "freecpu",
+            "base": "",
+            "fields": [
+                {
+                    "name": "user",
+                    "type": "name"
+                },
+                {
+                    "name": "cpu_payer",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "payerdel",
+            "base": "",
+            "fields": [
+                {
+                    "name": "cpu_payer",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "payerreg",
+            "base": "",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "cpu_payer",
+                    "type": "name"
+                },
+                {
+                    "name": "freecpu_permission",
+                    "type": "name"
+                },
+                {
+                    "name": "require_recipients",
+                    "type": "name[]"
+                }
+            ]
+        },
+        {
+            "name": "payerupdate",
+            "base": "",
+            "fields": [
+                {
+                    "name": "cpu_payer",
+                    "type": "name"
+                },
+                {
+                    "name": "new_owner",
+                    "type": "name"
+                },
+                {
+                    "name": "new_freecpu_permission",
+                    "type": "name"
+                },
+                {
+                    "name": "new_require_recipients",
+                    "type": "name[]"
+                }
+            ]
+        },
+        {
+            "name": "whitelist",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "contract",
+                    "type": "name"
+                },
+                {
+                    "name": "action",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "whitelistadd",
+            "base": "",
+            "fields": [
+                {
+                    "name": "cpu_payer",
+                    "type": "name"
+                },
+                {
+                    "name": "contract",
+                    "type": "name"
+                },
+                {
+                    "name": "action",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "whitelistdel",
+            "base": "",
+            "fields": [
+                {
+                    "name": "cpu_payer",
+                    "type": "name"
+                },
+                {
+                    "name": "id",
+                    "type": "uint64"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "freecpu",
+            "type": "freecpu",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "payerdel",
+            "type": "payerdel",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "payerreg",
+            "type": "payerreg",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "payerupdate",
+            "type": "payerupdate",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "whitelistadd",
+            "type": "whitelistadd",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "whitelistdel",
+            "type": "whitelistdel",
+            "ricardian_contract": ""
+        }
+    ],
+    "tables": [
+        {
+            "name": "cpupayers",
+            "type": "cpupayers",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "whitelist",
+            "type": "whitelist",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
+    "ricardian_clauses": [],
+    "variants": []
+}
