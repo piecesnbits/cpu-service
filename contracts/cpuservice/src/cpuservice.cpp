@@ -61,15 +61,15 @@ ACTION cpuservice::whitelistadd( name cpu_payer, name contract, name action){
   
   uint128_t exact_match = (uint128_t{contract.value} << 64) | action.value;
 
-  auto itr = _whitelist.find(exact_match);
-  if(itr != _whitelist.end() ){//existing entry
+  auto itr = by_cont_act.find(exact_match);
+  if(itr != by_cont_act.end() ){//existing entry
     check(false, contract.to_string()+"::"+action.to_string()+" is already on the whitelist");
   }
   else{//doesn't exist in table
 
     //check if contract already has a wildcard
     uint128_t wildcard = (uint128_t{contract.value} << 64) | name(0).value;
-    check(_whitelist.find(wildcard) == _whitelist.end(), "can't whitelist individual actions when the contract has a wildcard. Remove whitelisted actions before applying a wildcard.");
+    check(by_cont_act.find(wildcard) == by_cont_act.end(), "can't whitelist individual actions when the contract has a wildcard. Remove whitelisted actions before applying a wildcard.");
 
     _whitelist.emplace(p.owner, [&](auto& n) {
       n.id = _whitelist.available_primary_key();
